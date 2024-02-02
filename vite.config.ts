@@ -6,7 +6,7 @@ export default defineConfig({
   build: {
     manifest: true,
     rollupOptions: {
-      input: "./Document.tsx",
+      input: ["./client.tsx"],
     },
   },
 });

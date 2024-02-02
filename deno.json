@@ -22,9 +22,8 @@
     "vite": "npm:vite@^5.0.12"
   },
   "tasks": {
-    "dev": "sleep 1 && deno task dev:client & deno task dev:server",
-    "dev:client": "deno run --allow-env --allow-ffi --allow-net --allow-read --allow-run --allow-sys --allow-write=.vite/ --node-modules-dir --watch npm:vite",
-    "dev:server": "deno run --allow-net --watch server.tsx",
-    "build:client": "deno run --allow-env --allow-ffi --allow-net --allow-read --allow-run --allow-sys --allow-write=dist/ --node-modules-dir npm:vite build"
+    "dev": "sleep 1 && deno task build:client & deno task dev:server",
+    "dev:server": "deno run --allow-net --allow-read=./ --allow-write=./dist/ --watch server.tsx",
+    "build:client": "deno run --allow-env --allow-ffi --allow-net --allow-read --allow-run --allow-sys --allow-write=./dist/ --node-modules-dir npm:vite build --watch"
   }
 }
